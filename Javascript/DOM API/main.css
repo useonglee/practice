@@ -1,0 +1,64 @@
+/* ========== Font ========== */
+@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
+
+/* ========== Universal tags ========== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  text-decoration: none;
+  outline: none;
+}
+
+body {
+  line-height: 1;
+  font-family: "NanumSquare", sans-serif;
+}
+
+nav,
+ul,
+menu {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  background: transparent;
+}
+
+button {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* ========== Header ========== */
+#header {
+  text-align: center;
+}
+
+/* ========== Main ========== */
+#container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.add__post-container {
+  margin: 20px 0;
+  border: 1px solid #000;
+}
+
+#post-list {
+  border: 1px solid #000;
+}
+
+.post-wrap {
+  display: flex;
+  padding: 10px 20px;
+}
+
+.post-thumbnailUrl {
+  margin-right: 12px;
+}
