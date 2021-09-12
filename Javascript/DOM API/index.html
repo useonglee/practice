@@ -8,13 +8,24 @@
   <script src="script.js" defer></script>
 </head>
 <body>
-  <header id="header">Hello world!</header>
+  <header id="header">
+    <h1>Hello world!</h1>
+  </header>
   <main id="container">
     <section class="add__post-container">
-      <h3>게시글 추가하기</h3>
+      <h3>Add Post</h3>
       <div>
-        <input type="text" id="input-box">
-        <button id="submit">등록</button>
+        <div id="input-container">
+          <div class="input__id-wrap">
+            <p class="input__title">ID</p>
+            <input type="text" id="input__value-id" class="input__box">
+          </div>
+          <div class="input__title-wrap">
+            <p class="input__title">title</p>
+            <input type="text" id="input__value-title" class="input__box">
+          </div>
+        </div>
+        <button id="post-submit">Submit !</button>
       </div>
     </section>
     <div id="post-list"></div>
