@@ -1,6 +1,14 @@
 /* ========== Font ========== */
 @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
 
+:root {
+  --color-white: #fff;
+  --color-black: #292a2d;
+  --color-border: #d9d9d9;
+  --color-button-hover: #1ba1f2;
+  --color-post-hover: #e5e5e5;
+}
+
 /* ========== Universal tags ========== */
 * {
   box-sizing: border-box;
@@ -14,6 +22,7 @@
 body {
   line-height: 1;
   font-family: "NanumSquare", sans-serif;
+  color: var(--color-black);
 }
 
 nav,
@@ -36,6 +45,7 @@ button {
 
 /* ========== Header ========== */
 #header {
+  padding-top: 30px;
   text-align: center;
 }
 
@@ -45,20 +55,85 @@ button {
   margin: 0 auto;
 }
 
+/* ========== Input ========== */
+
 .add__post-container {
   margin: 20px 0;
-  border: 1px solid #000;
+  padding: 20px 52px;
+  border: 1px solid var(--color-border);
 }
 
+.add__post-container > h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.add__post-container > div {
+  display:flex; 
+}
+
+.input__title {
+  font-weight: 700;
+}
+
+.input__box {
+  width: 100%;
+  margin: 10px 0 20px 0;
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid var(--color-border);
+}
+
+#input-container {
+  flex-basis: 70%;
+}
+
+#post-submit {
+  flex-basis: 30%;
+  margin: 26px 32px 20px 32px;
+  font-size: 20px;
+  border: 1px solid var(--color-border);
+  transition: all 0.1s linear;
+}
+
+#post-submit:hover {
+  background-color: var(--color-button-hover);
+  color: var(--color-white);
+}
+
+/* ========== Post List ========== */
+
 #post-list {
-  border: 1px solid #000;
+  border: 1px solid var(--color-border);
 }
 
 .post-wrap {
   display: flex;
-  padding: 10px 20px;
+  padding: 40px 52px;
+}
+
+.post-wrap:hover {
+  background-color: var(--color-post-hover);
 }
 
 .post-thumbnailUrl {
-  margin-right: 12px;
+  flex-basis: 20%;
 }
+
+.post-title {
+  cursor: pointer;
+  flex-basis: 70%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 10px 32px;
+  font-weight: 700;
+}
+
+.post-id {
+  flex-basis: 10%;
+  overflow: hidden;
+  white-space:nowrap;
+  text-overflow: ellipsis;
+  padding: 10px 0;
+}
+
