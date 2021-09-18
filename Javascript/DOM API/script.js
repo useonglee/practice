@@ -94,7 +94,6 @@ function render() {
   const observerCallback = (entries) => {
     entries.forEach(entry => {
       const { target } = entry;
-      console.log(target.getBoundingClientRect().y);
 
       if (entry.isIntersecting) {
         if (end <= DATABASE.length && target.getBoundingClientRect().y > 362) {
@@ -103,7 +102,6 @@ function render() {
 
           postRequest(DATABASE, start, end);
           
-          console.log(start,end);
           observer.unobserve(target);
         }
       } else {
@@ -145,7 +143,6 @@ let filtered = [];
 function filtering(post) {
   post.addEventListener('click', (e) => {
     const title = e.target.textContent;
-    console.log(title)
 
     filtered = DATABASE.filter(v => v.title === title);
 
