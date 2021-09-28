@@ -1,0 +1,58 @@
+/* ========== Universal tags ========== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  text-decoration: none;
+  outline: none;
+}
+
+body {
+  line-height: 1;
+  font-family: "NanumSquare", sans-serif;
+  color: var(--color-black);
+}
+
+nav,
+ul,
+menu {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  background: transparent;
+}
+
+button {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* ========== Root ========== */
+#root {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.comment-wrapper {
+  cursor: pointer;
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #d9d9d9;
+}
+
+.comment-wrapper:hover {
+  background-color: #e5e5e5;
+}
+
+.id {
+  margin-bottom: 16px;
+}
+
+.name {
+  font-size: 18px;
+}
