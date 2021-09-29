@@ -5,9 +5,15 @@ const DB = [];
 
 // 데이터를 화면에 렌더링한다.
 async function render() {
-  const res = await fetch('https://jsonplaceholder.typicode.com/comments');
-  const data = await res.json();
-  DB.push(...data);
+  try {
+    root.textContent = "Loading...";
+    const res = await fetch('https://jsonplaceholder.typicode.com/comments');
+    const data = await res.json();
+    DB.push(...data);
+    root.textContent = "";
+  } catch (err) {
+    console.log(err);
+  }
 
   DB.forEach((comment) => {
     const commentWrapper = document.createElement('div');
