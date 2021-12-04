@@ -9,7 +9,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main></main>
+      <main>
+        <h1>
+          Go to{" "}
+          <Link href="/posts/first-post">
+            <a>first post !</a>
+          </Link>
+        </h1>
+      </main>
 
       <footer>
         <a
