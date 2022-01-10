@@ -1,5 +1,5 @@
 import OrderPage from "./pages/order";
-import { OrderContextProvider } from "./contexts/OrderContext";
+import OrderContextProvider from "./contexts/OrderContext";
 
 function App() {
   return (

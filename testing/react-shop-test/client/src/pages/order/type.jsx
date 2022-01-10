@@ -1,12 +1,14 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import ErrorBanner from "../../components/ErrorBanner";
+import { OrderContext } from "../../contexts/OrderContext";
 import Options from "./options";
 import Products from "./products";
 
 function Type({ orderType }) {
   const [items, setItems] = useState([]);
   const [error, setError] = useState(false);
+  const [orderDatas, updateItemCount] = useContext(OrderContext);
 
   useEffect(() => {
     loadItems(orderType);
@@ -32,6 +34,9 @@ function Type({ orderType }) {
       key={item.name}
       name={item.name}
       imagePath={item.imagePath}
+      updateItemCount={(itemName, newItemCount) =>
+        updateItemCount(itemName, newItemCount, orderType)
+      }
     />
   ));
 
