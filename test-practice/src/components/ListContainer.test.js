@@ -21,13 +21,16 @@ describe("ListContainer", () => {
   );
 
   it("renders tasks", () => {
-    const { container } = render(<ListContainer tasks={tasks} />);
+    const { container } = render(<ListContainer />);
 
     expect(container).toHaveTextContent("테스트 공부 하자~~");
 
     const buttons = screen.getAllByText("완료");
     userEvent.click(buttons[0]);
 
-    expect(dispatch).toBeCalled();
+    expect(dispatch).toBeCalledWith({
+      type: "deleteTask",
+      payload: { id: 1 },
+    });
   });
 });

@@ -1,7 +1,7 @@
 import React from "react";
 
 import { useDispatch, useSelector } from "react-redux";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 
 import App from "./App";
 import tasks from "./constants/tasks";
@@ -20,8 +20,12 @@ describe("App", () => {
   );
 
   it("renders tasks", () => {
-    const { container } = render(<App />);
+    render(<App />);
 
-    expect(container).toHaveTextContent("아무 일도 하기 싫다");
+    const container = screen.getByText("아무 일도 하기 싫다", { exact: false });
+
+    expect(dispatch).toBeCalled();
+
+    expect(container).toBeInTheDocument();
   });
 });

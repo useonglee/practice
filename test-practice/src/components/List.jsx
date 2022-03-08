@@ -10,7 +10,7 @@ function List({ tasks, onClick }) {
       {tasks.map((task) => (
         <li key={task.id}>
           {task.title}
-          <button type="button" onClick={onClick}>
+          <button type="button" onClick={() => onClick(task.id)}>
             완료
           </button>
         </li>
