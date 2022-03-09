@@ -9,23 +9,23 @@ import tasks from "./constants/tasks";
 jest.mock("react-redux");
 
 describe("App", () => {
-  const dispatch = jest.fn();
-
-  useDispatch.mockImplementation(() => dispatch);
-
-  useSelector.mockImplementation((selector) =>
-    selector({
-      tasks,
-    })
-  );
-
   it("renders tasks", () => {
-    render(<App />);
+    const dispatch = jest.fn();
 
-    const container = screen.getByText("아무 일도 하기 싫다", { exact: false });
+    useDispatch.mockImplementation(() => dispatch);
+
+    useSelector.mockImplementation((selector) =>
+      selector({
+        tasks,
+      })
+    );
+
+    render(<App />);
 
     expect(dispatch).toBeCalled();
 
-    expect(container).toBeInTheDocument();
+    expect(
+      screen.getByText("테스트 공부 하자~~", { exact: false })
+    ).toBeInTheDocument();
   });
 });
