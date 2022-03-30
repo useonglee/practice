@@ -1,9 +1,15 @@
-import React from "react";
-import { connect } from "react-redux";
-
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchTasks } from "../../lib/store";
 import TaskList from "../TaskList/TaskList";
 
-export function PureInboxScreen({ error }) {
+export default function InboxScreen() {
+  const dispatch = useDispatch();
+  const { error } = useSelector((state) => state.taskbox);
+  useEffect(() => {
+    dispatch(fetchTasks());
+  }, []);
+
   if (error) {
     return (
       <div className="page lists-show">
@@ -15,7 +21,6 @@ export function PureInboxScreen({ error }) {
       </div>
     );
   }
-
   return (
     <div className="page lists-show">
       <nav>
@@ -27,9 +32,3 @@ export function PureInboxScreen({ error }) {
     </div>
   );
 }
-
-PureInboxScreen.defaultProps = {
-  error: null,
-};
-
-export default connect(({ error }) => ({ error }))(PureInboxScreen);
